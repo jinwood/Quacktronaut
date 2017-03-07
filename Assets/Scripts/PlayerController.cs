@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, 0);
         var player = GetComponent<Rigidbody2D>();
         
-        if (Input.GetKeyDown("up"))
+        if (Input.GetKeyDown("up") || Input.GetTouch(0).phase == TouchPhase.Began)
         {
             player.velocity = Vector2.zero;
             player.AddForce(JumpForce);
